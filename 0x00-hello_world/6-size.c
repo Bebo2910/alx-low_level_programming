@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
-  3   * main - prints the size of each type
-  4   * Return: 0
-  5   */
+ * main - prints the size of each type
+ * Return: 0
+ */
 int main(void)
 {
 	printf("Size of a char: %lu byte(s)\n", sizeof(char));
