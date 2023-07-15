@@ -7,11 +7,14 @@
 
 int main(void)
 {
-	for (int count = 97; count <= 122; count++)
+	int count;
+	int sound;
+
+	for (count = 97; count <= 122; count++)
 	{
 		putchar(count);
 	}
-	for (int sound = 65; sound <= 90; sound++)
+	for (sound = 65; sound <= 90; sound++)
 	{
 		putchar(sound);
 	}

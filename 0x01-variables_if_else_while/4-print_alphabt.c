@@ -6,7 +6,9 @@
   */
 int main(void)
 {
-	for (int count = 97; count <= 122; count++)
+	int count;
+
+	for (count = 97; count <= 122; count++)
 	{
 		if (count != 101 && count != 113)
 		{
