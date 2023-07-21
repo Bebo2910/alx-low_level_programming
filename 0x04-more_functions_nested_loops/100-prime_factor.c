@@ -22,12 +22,12 @@ double _sqrt(double x)
 }
 
 /**
-  * largest_prime_factior - the largest divisor
+  * largest_prime_factor - the largest divisor
   * @num: the number
   * Return: the largest
   */
 
-void largest_prime_factior(long int num)
+void largest_prime_factor(long int num)
 {
 	int prmN, largest;
 
