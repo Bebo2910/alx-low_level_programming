@@ -22,12 +22,14 @@ int _atoi(char *s)
 		/*make a check if it is a number*/
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			result = (result * 10 + (s[i] - '0')) * dir;
+			result = result * 10 + (s[i] - '0');
 		}
 		else
 		{
 			continue;
 		}
 	}
+
+	result *= dir;
 	return (result);
 }
