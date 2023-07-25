@@ -10,7 +10,7 @@
 
 int _atoi(char *s)
 {
-	int i, result = 0, dir = 1;
+	int i, dir = 1, result = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -24,9 +24,9 @@ int _atoi(char *s)
 		{
 			result = result * 10 + (s[i] - '0');
 		}
-		else
+		else if ((s[i] <= '0' || s[i] >= '9') && s[i] != '+')
 		{
-			continue;
+			break;
 		}
 	}
 
