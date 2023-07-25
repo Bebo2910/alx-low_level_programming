@@ -24,7 +24,7 @@ int _atoi(char *s)
 		{
 			result = result * 10 + (s[i] - '0');
 		}
-		else if (s[i] == '+' || s[i] == '-')
+		else if (s[i] == '+' || s[i] == '-' || s[i] == ' ')
 		{
 			continue;
 		}
