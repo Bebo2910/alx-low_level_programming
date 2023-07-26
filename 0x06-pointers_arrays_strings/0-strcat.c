@@ -10,18 +10,22 @@
 char *_strcat(char *dest, char *src)
 {
 	/*finding the length of the string*/
-	int i, l, count;
+	int i, j;
 
-	for (i = 0; src[i] != '\0'; i++)
-		;
-
-	for (l = 0; dest[i] != '\0'; l++)
-		;
-	for (count = 0; count < i; count++)
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		dest[l + count] = src[count];
+		i++;
 	}
-	dest[l + count] = '\0';
+
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
 
 	return (dest);
 
