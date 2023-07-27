@@ -8,7 +8,7 @@
   *
   */
 
-char *leet(char *n);
+char *leet(char *n)
 {
 	int i, j;
 
