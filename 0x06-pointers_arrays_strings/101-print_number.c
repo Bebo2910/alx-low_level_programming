@@ -12,10 +12,11 @@ void print_number(int n)
 	unsigned int i;
 
 	i = n;
+
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		i = -n;
 	}
 
 	if (i != 0)
