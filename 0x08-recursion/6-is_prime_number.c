@@ -9,13 +9,13 @@
 
 int flag_is(int n, int i)
 {
-	int flag = 0;
+	int flag = 1;
 
 	if (i <= n / 2)
 	{
 		if (n % i == 0)
 		{
-			flag = 1;
+			flag = 0;
 			return (flag);
 		}
 		else
@@ -39,7 +39,7 @@ int is_prime_number(int n)
 {
 	if (n == 0 || n == 1)
 	{
-		return (1);
+		return (0);
 	}
 	else
 	{
