@@ -23,10 +23,8 @@ int flag_is(int n, int i)
 			flag_is(n, i + 1);
 		}
 	}
-	else
-	{
-		return (flag);
-	}
+	
+	return (flag);
 }
 
 /**
