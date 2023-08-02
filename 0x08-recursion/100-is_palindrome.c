@@ -17,7 +17,7 @@ int is_right(char *s, int size, int i)
 	{
 		return (0);
 	}
-	is_right(s, size, i + 1);
+	return (is_right(s, size, i + 1));
 }
 /**
   * is_palindrome - the function to simi
