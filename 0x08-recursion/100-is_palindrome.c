@@ -8,7 +8,7 @@
   */
 int is_right(char *s, int i)
 {
-	if (s[i])
+	if (s[i + 1])
 	{
 		if (s[i] != s[-1 - i])
 		{
