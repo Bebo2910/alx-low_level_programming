@@ -9,15 +9,15 @@
   */
 int is_right(char *s, int size, int i)
 {
-	if (i == size / 2)
+	if (i < size / 2)
 	{
-		return (1);
+		if (s[i] != s[size - 1 - i])
+		{
+			return (0);
+		}
+		return (is_right(s, size, i + 1));
 	}
-	if (s[i] != s[size - 1 - i])
-	{
-		return (0);
-	}
-	return (is_right(s, size, i + 1));
+	return (1);
 }
 /**
   * is_palindrome - the function to simi
