@@ -3,15 +3,14 @@
 /**
   * is_right - the function to test
   * @s: the string
-  * @size: the size
   * @i: the number of array
   * Return: 1 0r 0
   */
-int is_right(char *s, int size, int i)
+int is_right(char *s, int i)
 {
-	if (i < size / 2)
+	if (s[i])
 	{
-		if (s[i] != s[size - 1 - i])
+		if (s[i] != s[-1 - i])
 		{
 			return (0);
 		}
@@ -31,7 +30,5 @@ int is_palindrome(char *s)
 {
 	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (is_right(s, i, 0));
+	return (is_right(s, 0));
 }
