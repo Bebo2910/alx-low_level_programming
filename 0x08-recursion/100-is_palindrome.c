@@ -14,7 +14,7 @@ int is_right(char *s, int i)
 		{
 			return (0);
 		}
-		return (is_right(s, size, i + 1));
+		return (is_right(s, i + 1));
 	}
 	return (1);
 }
@@ -28,7 +28,5 @@ int is_right(char *s, int i)
 
 int is_palindrome(char *s)
 {
-	int i;
-
 	return (is_right(s, 0));
 }
