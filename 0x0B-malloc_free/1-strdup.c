@@ -15,9 +15,9 @@ char *_strdup(char *str)
 	{
 		return (0);
 	}
+	int i;
 
-	int i = 0;
-
+	i = 0;
 	while (str[i])
 	{
 		dip[i] = str[i];
