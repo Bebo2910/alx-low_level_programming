@@ -5,7 +5,7 @@
   * str_concat - function to merge
   * @s1: string to make first
   * @s2: string to make second
-  * Return: 0 or the string
+  * Return: 0 or the array
   */
 
 char *str_concat(char *s1, char *s2)
@@ -31,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		for (; i < size1 - 1; i++)
+		for (; i < size1; i++)
 		{
 			total[i] = s1[i];
 		}
