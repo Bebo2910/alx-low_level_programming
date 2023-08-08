@@ -13,9 +13,13 @@ char *str_concat(char *s1, char *s2)
 	int size1 = 0, size2 = 0, i = 0, j = 0;
 	char *total;
 
-	if (s1 == 0 && s2 == 0)
+	if (s1 == 0)
 	{
-		return (0);
+		s1 = '\0';
+	}
+	if (s2 == 0)
+	{
+		s2 = '\0';
 	}
 
 	for (; s1[size1] != '\0'; size1++)
@@ -23,7 +27,7 @@ char *str_concat(char *s1, char *s2)
 	for (; s2[size2] != '\0'; size2++)
 		;
 
-	total = malloc(size1 * sizeof(*s1) + size2 * sizeof(*s2) + 1);
+	total = malloc((size1 + size2) * sizeof(char) + 1);
 
 	if (total == 0)
 	{
