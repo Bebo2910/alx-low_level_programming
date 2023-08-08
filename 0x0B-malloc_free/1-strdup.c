@@ -9,20 +9,28 @@
   */
 char *_strdup(char *str)
 {
-	char *dip = malloc(sizeof(str));
+	int i = 0, size = 0;
+	char *dip;
 
+	if (str == 0)
+	{
+		return (0);
+	}
+
+	for (; str[size] != '\0'; size++)
+		;
+
+	dip = malloc(size * sizeof(*str) + 1);
 	if (dip == 0)
 	{
 		return (0);
 	}
-	int i;
-
-	i = 0;
-	while (str[i])
+	else
 	{
-		dip[i] = str[i];
-		i++;
+		for (; i < size; i++)
+		{
+			dip[i] = str[i];
+		}
 	}
-
 	return (dip);
 }
