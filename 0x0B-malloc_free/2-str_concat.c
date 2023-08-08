@@ -10,7 +10,7 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int size1 = 0, size2 = 0, i = 0;
+	int size1 = 0, size2 = 0, i = 0, j = 0;
 	char *total;
 
 	if (s1 == 0 && s2 == 0)
@@ -36,9 +36,9 @@ char *str_concat(char *s1, char *s2)
 			total[i] = s1[i];
 		}
 
-		for (; i < size2 + (size1 - 1); i++)
+		for (; j < size2; j++)
 		{
-			total[i] = s2[i];
+			total[i + j] = s2[j];
 		}
 
 		return (total);
