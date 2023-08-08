@@ -11,7 +11,7 @@ int _strlen(char *s)
 {
 	int i;
 
-	for (i = 0; s[i] != ' '; i++)
+	for (i = 0; s[i] != '\0'; i++)
 		;
 	return (i);
 }
@@ -42,7 +42,7 @@ char *argstostr(int ac, char **av)
 
 	for (; n < ac; n++)
 	{
-		for (; av[n][j] != '\0'; j++, index++)
+		for (j = 0; av[n][j] != '\0'; j++, index++)
 		{
 			s[index] = av[n][j];
 		}
