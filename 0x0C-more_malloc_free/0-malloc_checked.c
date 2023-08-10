@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib>
+#include <stdlib.h>
 
 /**
   * malloc_checked - function
@@ -17,5 +17,5 @@ void *malloc_checked(unsigned int b)
 		exit(98);
 	}
 
-	return(m);
+	return (m);
 }
