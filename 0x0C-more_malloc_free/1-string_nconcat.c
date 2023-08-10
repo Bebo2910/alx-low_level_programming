@@ -3,22 +3,6 @@
 #include <stdio.h>
 
 /**
-  * _strlen - function
-  * @s: len
-  * Return: len 2
-  *
-  */
-int _strlen(char *s)
-{
-	unsigned int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		;
-
-	return (i);
-}
-
-/**
   * string_nconcat - function
   * @s1: string 1
   * @s2: string 2
@@ -40,13 +24,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 
-	size1 = _strlen(s1);
-	size2 = _strlen(s2);
+	for (size1 = 0; s1[size1] != '\0'; size1++)
+		;
 
-	if (n > _strlen(s2))
-	{
-		n = _strlen(s2);
-	}
+	for (size2 = 0; s2[size2] != '\0'; size2++)
+		;
+
 
 	s = malloc(size1 + n + 1);
 
