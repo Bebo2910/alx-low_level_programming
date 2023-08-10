@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
   * _strlen - function
@@ -28,18 +29,30 @@ int _strlen(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s;
-	int i, j;
+	unsigned int i, j, size1, size2;
+
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+
+	size1 = _strlen(s1);
+	size2 = _strlen(s2);
 
 	if (n > _strlen(s2))
 	{
 		n = _strlen(s2);
 	}
 
-	s = (char *)malloc(sizeof(*s1) + n + 1);
+	s = malloc(size1 + n + 1);
 
-	if (s == 0)
+	if (s == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
 	for (i = 0; s1[i] != '\0'; i++)
 	{
