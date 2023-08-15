@@ -32,6 +32,7 @@ char *_strcopy(char *final, char *src)
 	{
 		final[i] = src[i];
 	}
+	final[i] = '\0';
 
 	return (final);
 }
