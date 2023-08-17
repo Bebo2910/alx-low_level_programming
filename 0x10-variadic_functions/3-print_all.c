@@ -88,6 +88,7 @@ void print_all(const char * const format, ...)
 				list_of_fucks[j].f(separator, ap);
 				separator = ", ";
 			}
+			j++;
 		}
 		i++;
 	}
