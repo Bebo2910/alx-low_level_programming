@@ -11,7 +11,7 @@
   */
 void fuck_char(char *separator, va_list ap)
 {
-	printf("%s%c", separator, va_arg(ap, char));
+	printf("%s%c", separator, va_arg(ap, int));
 }
 
 /**
@@ -30,7 +30,7 @@ void fuck_string(char *separator, va_list ap)
 		case 1:
 			s = "(nil)";
 	}
-	printf("%s%s", separator, s)
+	printf("%s%s", separator, s);
 }
 
 /**
@@ -53,7 +53,7 @@ void fuck_int(char *separator, va_list ap)
   */
 void fuck_float(char *separator, va_list ap)
 {
-	printf("%s%f", separator, va_arg(ap, float));
+	printf("%s%f", separator, va_arg(ap, double));
 }
 
 /**
@@ -83,7 +83,7 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (list_of_fucks[j].token)
 		{
-			if (format[i] == list_of_fucks[j].token)
+			if (format[i] == list_of_fucks[j].token[0])
 			{
 				list_of_fucks[j].f(separator, ap);
 				separator = ", ";
