@@ -6,7 +6,6 @@
   * Return: return string chars
   *
   */
-
 int _strlen(const char *s)
 {
 	int i = 0;
@@ -24,7 +23,6 @@ int _strlen(const char *s)
   * Return: string
   *
   */
-
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new = malloc(sizeof(list_t));
@@ -37,15 +35,16 @@ list_t *add_node(list_t **head, const char *str)
 	if (str)
 	{
 		new->str = strdup(str);
+
 		if (!new->str)
 		{
 			free(new);
 			return (NULL);
 		}
-		new->len = _strlen(new->str);
+		new->len = _strlen(str);
 	}
 
 	new->next = *head;
 	*head = new;
-	return (*head);
+	return (new);
 }
