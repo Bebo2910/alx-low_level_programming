@@ -16,14 +16,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 		return (NULL);
 	}
 
-	while (buffer->next)
-	{
-		buffer = buffer->next;
-	}
-
 	new->n = n;
-	new->next = NULL;
-
-	buffer->next = new;
+	new->next = buffer;
 	return (new);
 }
