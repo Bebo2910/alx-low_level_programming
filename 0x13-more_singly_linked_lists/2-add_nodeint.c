@@ -16,15 +16,14 @@ listint_t *add_nodeint(listint_t **head, const int n)
 		return (NULL);
 	}
 
-	while ((*head)->next)
+	while (buffer->next)
 	{
-		(*head) = (*head)->next;
+		buffer = buffer->next;
 	}
 
 	new->n = n;
 	new->next = NULL;
 
-	(*head)->next = new;
-	(*head) = buffer;
+	buffer->next = new;
 	return (new);
 }
