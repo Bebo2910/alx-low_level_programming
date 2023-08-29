@@ -9,7 +9,7 @@
   */
 void free_listint(listint_t *head)
 {
-	listint_t *buffer = malloc(sizeof(listint_t));
+	listint_t *buffer;
 
 	while (head)
 	{
