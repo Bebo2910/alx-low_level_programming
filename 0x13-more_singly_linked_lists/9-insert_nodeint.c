@@ -35,8 +35,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			return (new);
 		}
 		i++;
-		buffer = buffer->next
+		buffer = buffer->next;
 	}
-	free (new);
+	free(new);
 	return (NULL);
 }
