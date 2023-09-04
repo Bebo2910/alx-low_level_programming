@@ -1,5 +1,8 @@
 #include "main.h"
 
+#define CANTREAD "Error: Can't read from file %s\n"
+#define CANTWRITE "Error: Can't write to %s\n"
+#define CANTCLOSE "Error: Can't close fd %d\n"
 /**
   * main - cp
   * @argc: argc
@@ -21,33 +24,33 @@ int main(int argc, char *argv[])
 	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[1]), exit(98);
+		dprintf(STDERR_FILENO, CANTREAD, argv[1]), exit(98);
 	}
 	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]), exit(99);
+		dprintf(STDERR_FILENO, CANTWRITE, argv[2]), exit(99);
 	}
-	bytes = read(fd1, &buffer[0], BUF_SIZE);
+	while ((bytes = read(fd1, buffer, BUF_SIZE)) > 0)
+	{
+		if (bytes != write(fd2, buffer, bytes))
+		{
+			dprintf(STDERR_FILENO, CANTWRITE, argv[2]), exit(99);
+		}
+	}
 	if (bytes == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[1]), exit(98);
-	}
-	bytes = write(fd2, &buffer[0], bytes);
-	if (bytes == 0)
-	{
-		dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]), exit(99);
+		dprintf(STDERR_FILENO, CANTREAD, argv[1]), exit(98);
 	}
 	fd1 = close(fd1);
 	fd2 = close(fd2);
 	if (fd1)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd1), exit(100);
+		dprintf(STDERR_FILENO, CANTCLOSE, fd1), exit(100);
 	}
 	if (fd2)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd2), exit(100);
+		dprintf(STDERR_FILENO, CANTCLOSE, fd2), exit(100);
 	}
-
 	return (EXIT_SUCCESS);
 }
