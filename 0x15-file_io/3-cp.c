@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
-  * cp_function - cp
+  * main - cp
   * @argc: argc
   * @argv: argv
   * Return: exit
   *
   */
 
-int cp_function(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int fd1, fd2;
 	ssize_t bytes;
