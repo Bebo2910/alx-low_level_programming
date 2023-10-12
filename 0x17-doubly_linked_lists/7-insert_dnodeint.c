@@ -23,6 +23,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		{
 			return NULL;
 		}
+		if (i == idx - 2)
+		{
+			add_dnodeint_end(&(*h), n);
+			return (*h);
+		}
 		buffer = buffer->next;
 	}
 	new->n = n;
