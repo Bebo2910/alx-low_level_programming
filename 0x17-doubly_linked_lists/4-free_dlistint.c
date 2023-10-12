@@ -12,7 +12,7 @@ void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *buffer;
 
-	while (head->next)
+	while (head)
 	{
 		buffer = head;
 		head = head->next;
