@@ -5,6 +5,7 @@
  * @n: the new number
  * Return: adderss on success
  */
+
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new = malloc(sizeof(dlistint_t));
@@ -19,5 +20,5 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	new->prev = NULL;
 	(*head) = new;
 
-	return (new);
+	return (*head);
 }
