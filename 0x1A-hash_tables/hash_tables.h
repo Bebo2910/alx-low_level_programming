@@ -45,4 +45,5 @@ void hash_table_delete(hash_table_t *ht);
 
 
 hash_node_t *make_node(const char *key, const char *value);
+void delete_node(hash_node_t *node);
 #endif
