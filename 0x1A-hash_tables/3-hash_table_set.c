@@ -2,6 +2,7 @@
 
 /**
  * hash_table_set - function to set the variables in the place
+ * @ht: the table used
  * @key: key used to find out the index
  * @value: the value inputed
  * Return: 1 on sucess or 0 on failure
