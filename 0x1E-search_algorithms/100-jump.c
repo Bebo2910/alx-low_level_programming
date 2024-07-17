@@ -3,6 +3,18 @@
 #include <stdio.h>
 
 /**
+ * min - returns the minimum of two size_t values
+ * @a: first value
+ * @b: second value
+ *
+ * Return: `a` if lower or equal to `b`, `b` otherwise
+ */
+size_t min(size_t a, size_t b)
+{
+	return (a <= b ? a : b);
+}
+
+/**
  * jump_search - finding the value faster using the jump search algorithm
  * @array: the array to search in
  * @size: the size of the array
@@ -11,25 +23,29 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-    size_t i = 0, j = 0, jump = sqrt(size);
+	size_t low, high, jump;
 
-    if (!array || size == 0)
-        return (-1);
+	if (!array || size == 0)
+		return (-1);
 
-    while (i < size && array[i] < value) {
-        printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-        i += jump;
-    }
+	jump = sqrt(size);
 
-    j = i - jump;
-    printf("Value found between indexes [%ld] and [%ld]\n", j, i);
+	for (high = 0; high < size && array[high] < value;
+	     low = high, high += jump)
+	{
+		printf("Value checked array[%lu] = [%d]\n",
+		       high, array[high]);
+	}
 
-    while (j < size && j <= i) {
-        printf("Value checked array[%ld] = [%d]\n", j, array[j]);
-        if (array[j] == value)
-            return (j);
-        j++;
-    }
+	/* causes 'found' msg even when value not in array */
+	printf("Value found between indexes [%lu] and [%lu]\n", low, high);
 
-    return (-1);
+	for (; low <= min(high, size - 1); low++)
+	{
+		printf("Value checked array[%lu] = [%d]\n", low, array[low]);
+		if (array[low] == value)
+			return (low);
+	}
+
+	return (-1);
 }
